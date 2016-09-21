@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root :to => 'posts#index'
 
+namespace :admin do
   get :sign_up, to: 'users#new'
   post :sign_up, to: 'users#create'
 
@@ -16,6 +17,10 @@ Rails.application.routes.draw do
   post :sign_in, to: 'sessions#create' 
 
   get :sign_out, to: 'sessions#destroy'
+
+  resources :posts
+  root to: 'posts#index'
+end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
