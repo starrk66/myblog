@@ -1,0 +1,25 @@
+<%= form_tag  admin_posts_path, role: "form"  do |f| -%>
+
+  <div class="form-group">
+    <label for="post_title">title</label>
+    <input type="text" name = "title" class="form-control" id="post_title" placeholder="Enter title" required autofocus>
+  </div>
+    <div class="form-group">
+    <label for="post_title">author</label>
+    <input type="text" name = "author" class="form-control" id="post_author" placeholder="Enter author" required >
+  </div>
+  
+  <div class="form-group">
+    <label for="post_content">content</label>
+    <textarea class="form-control" rows="3"  name = "content" id="post_content" placeholder="Enter content" equired ></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="post_published_at">Published at</label>
+    <input type="text" class="form-control form_datetime"  id="exampleInputPassword2" placeholder="post_published_at" readonly name = "published_at" quired>
+
+  </div>
+  
+  <button class="btn btn-lg btn-primary " type="submit">Create</button>
+  
+<% end -%>

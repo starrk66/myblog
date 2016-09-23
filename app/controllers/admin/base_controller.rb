@@ -6,6 +6,8 @@ class Admin::BaseController < ActionController::Base
   before_filter :check_sign_in
   helper_method :is_sign_in?, :current_user
 
+  layout 'admin'
+
   def is_sign_in?
   	!!session['user_id']
   end
@@ -16,7 +18,7 @@ class Admin::BaseController < ActionController::Base
 
   def check_sign_in
   	unless is_sign_in?
-  	 	redirect_to sign_in_path
+  	 	redirect_to admin_sign_in_path
   	 end 
   end
   
